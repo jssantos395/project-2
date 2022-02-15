@@ -6,6 +6,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const NFT = require('./models/nfts.js')
 require('dotenv').config()
 //___________________
 //Port
@@ -23,6 +24,9 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
 mongoose.connect(MONGODB_URI);
+// mongoose.connect('mongodb://localhost:27017/NFTCrud', () => {
+//   console.log('The connection with mongo is established');
+// })
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -51,6 +55,65 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 app.get('/' , (req, res) => {
   res.send('Hello World!');
 });
+
+app.get('/nfts', (req, res)=>{
+    NFT.find({}, (error, allNFTs)=>{
+        res.render('index.ejs', {
+            nfts: allNFTs
+        });
+    });
+});
+
+// app.get('/nfts/:id', (req, res) => {
+//   NFT.findById(req.params.id, (error, foundFruit) => {
+//     res.send(foundFruit)
+//   })
+// })
+
+app.get('/nfts/new', (req, res)=>{
+    res.render('new.ejs');
+});
+
+app.get('/nfts/:id', (req, res)=>{
+    NFT.findById(req.params.id, (err, foundNft)=>{
+        res.render('show.ejs', {
+            nfts: foundNft
+        });
+    });
+});
+
+app.get('/nfts/:id/edit', (req, res)=>{
+    NFT.findById(req.params.id, (err, foundNft)=>{ //find the fruit
+        res.render(
+    		'edit.ejs',
+    		{
+    			nfts: foundNft //pass in found fruit
+    		}
+    	);
+    });
+});
+
+app.post('/nfts', (req, res)=>{
+    NFT.create(req.body, (error, createdNFTs ) => {
+      // res.send(createdNFTs)
+        res.redirect('/nfts');
+    })
+});
+
+app.put('/nfts/:id', (req, res)=>{
+    NFT.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+        res.redirect('/nfts');
+    })
+});
+
+app.delete('/nfts/:id', (req, res)=>{
+    NFT.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/nfts');//redirect back to fruits index
+    });
+});
+
+
+
 
 //___________________
 //Listener
