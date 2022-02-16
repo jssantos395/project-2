@@ -2,38 +2,59 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="/main.css">
+        <link href="/main.css" rel="stylesheet" >
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
         <title></title>
     </head>
 
     <header>
-      <ul>
-        <li><a href="/nfts">Home</a></li>
-      </ul>
+      <a href="/nfts/new">Showcase a new NFT</a>
     </header>
     <body>
-        <h1>NFTs index page</h1>
-        <ul>
-            <% for(let i = 0; i < nfts.length; i++){ %>
-              <a href="/nfts/<%=nfts[i].id%>">
-                <ul>
-                  <li> <img class="main-img" src="<%=nfts[i].img; %>" alt=""></li>
-                  <li><%=nfts[i].name; %></li>
-                </ul>
-              </a>
 
-              <form action="/nfts/<%=nfts[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE"/>
-              </form>
+        <div class="nes-container with-title">
+             <span class="title">NFTs index page</span>
+             <p>Welcome to my page. Here you can view and display your own NFTs!</p>
+        </div>
 
-              <a href="/nfts/<%=nfts[i].id; %>/edit">Edit</a>
+        <div class="main-container">
+          <ul>
+              <% for(let i = 0; i < nfts.length; i++){ %>
+                <a href="/nfts/<%=nfts[i].id%>">
+                  <ul>
+                    <li> <img class="main-img" src="<%=nfts[i].img; %>" alt=""></li>
+                    <div class="nes-container with-title">
+                      <span class="title"><%=nfts[i].name; %></span>
+                      <div class="button-flex">
+                        <div class="delete-button">
+                          <form action="/nfts/<%=nfts[i].id%>?_method=DELETE" method="POST">
+                            <input type="submit" value="DELETE"/>
+                          </form>
+                        </div>
 
-            <% } %>
+                        <a href="/nfts/<%=nfts[i].id; %>/edit">Edit</a>
+                      </div>
 
-        </ul>
+                    </div>
+                  </ul>
+                </a>
+              <% } %>
+          </ul>
+        </div>
+
+
     </body>
 
-    <nav>
-    <a href="/nfts/new">Showcase a new NFT</a>
-    </nav>
+    <footer>
+      <div class="nes-container">
+         <i class="nes-icon twitter is-large"></i>
+         <i class="nes-icon facebook is-small"></i>
+         <i class="nes-icon instagram is-medium"></i>
+         <i class="nes-icon github is-large"></i>
+         <i class="nes-icon google is-large"></i>
+         <i class="nes-icon gmail is-large"></i>
+      </div>
+    </footer>
+
 </html>

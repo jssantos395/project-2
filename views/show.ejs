@@ -1,19 +1,21 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="/main.css">
+        <link href="/show.css" rel="stylesheet" >
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
         <title></title>
     </head>
     <body>
         <h1>NFT show page</h1>
 
         <aside><img src='<%=nfts.img%>'></aside>
-        <div>
+        <div class="main-container">
           <ul>
             <li>Name: <%=nfts.name%></li>
             <li>Number: <%=nfts.number%></li>
             <li>Rarity: <%=nfts.rarity%></li>
-            <li>Opensea Link: <%=nfts.opensea%></li>
+            <li><a href="<%=nfts.opensea%>">Opensea Link: <%=nfts.opensea%></a></li>
           </ul>
 
         </div>

@@ -1,0 +1,44 @@
+header {
+  text-align: center;
+  padding: 25px;
+}
+
+body {
+  text-align: center;
+}
+
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.main-img {
+  width: 550px;
+  height: 500px;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.button-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-button {
+  padding-right: 25px;
+  margin-bottom: 25px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+}
