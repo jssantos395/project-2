@@ -3,6 +3,10 @@ header {
   padding: 25px;
 }
 
+h1 {
+  text-align: center;
+}
+
 body {
   text-align: center;
 }
@@ -16,6 +20,10 @@ ul li {
   list-style-type: none;
 }
 
+.form-container {
+  text-align: center;
+}
+
 .main-img {
   width: 550px;
   height: 500px;
@@ -23,11 +31,12 @@ ul li {
 
 .main-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: row;
 }
 
+.main-container-1 {
+  text-align: center;
+}
 .button-flex {
   display: flex;
   justify-content: flex-end;

@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link href="/show.css" rel="stylesheet" >
+        <link href="/main.css" rel="stylesheet" >
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
         <title></title>
@@ -9,8 +9,8 @@
     <body>
         <h1>NFT show page</h1>
 
-        <aside><img src='<%=nfts.img%>'></aside>
-        <div class="main-container">
+        <aside class="main-container"><img src='<%=nfts.img%>'></aside>
+        <div class="main-container-1">
           <ul>
             <li>Name: <%=nfts.name%></li>
             <li>Number: <%=nfts.number%></li>
@@ -19,9 +19,9 @@
           </ul>
 
         </div>
-
-        <nav>
+        <nav class="main-container">
             <a href="/nfts">Back to Index</a>
         </nav>
+
     </body>
 </html>

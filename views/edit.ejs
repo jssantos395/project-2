@@ -2,18 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="/main.css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
     <title></title>
   </head>
   <body>
     <h1>Edit NFT page</h1>
-    <form action="/nfts/<%=nfts.id%>?_method=PUT" method="POST">
-    <form class="" action="index.html" method="post">
-      Image: <input type="text" name="img" value="<%=nfts.img%>"/><br/>
-      Name: <input type="text" name="name" value="<%=nfts.name%>"/><br/>
-      Number: <input type="text" name="number" value="<%=nfts.number%>"/><br/>
-      Rarity: <input type="text" name="rarity" value="<%=nfts.rarity%>"/><br/>
-      Opensea: <input type="text" name="opensea" value="<%=nfts.opensea%>"/><br/>
-      <input type="submit" value="Submit Changes">
-    </form>
+    <div class="form-container">
+      <form action="/nfts/<%=nfts.id%>?_method=PUT" method="POST">
+      <form class="" action="index.html" method="post">
+        Image: <input type="text" name="img" value="<%=nfts.img%>"/><br/>
+        Name: <input type="text" name="name" value="<%=nfts.name%>"/><br/>
+        Number: <input type="text" name="number" value="<%=nfts.number%>"/><br/>
+        Rarity: <input type="text" name="rarity" value="<%=nfts.rarity%>"/><br/>
+        Opensea: <input type="text" name="opensea" value="<%=nfts.opensea%>"/><br/>
+        <input type="submit" value="Submit Changes">
+      </form>
+      <nav>
+          <a href="/nfts">Back to Index</a>
+      </nav>
+    </div>
+
+
+
   </body>
 </html>
