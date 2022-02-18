@@ -2,17 +2,23 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link href="/main.css" rel="stylesheet" >
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
         <title></title>
     </head>
     <body>
         <h1>New NFT page</h1>
-        <form action="/nfts" method="POST">
-            Image: <input type="text" name="img" /><br/>
-            Name: <input type="text" name="name" /><br/>
-            Number: <input type="text" name="number" /><br/>
-            Rarity: <input type="text" name="rarity" /><br/>
-            Opensea: <input type="link" name="opensea" /><br/>
-            <input type="submit" value="Showcase NFT"/>
-        </form>
+        <div class="main-container">
+          <form action="/nfts" method="POST">
+              Image: <input type="text" name="img" /><br/>
+              Name: <input type="text" name="name" /><br/>
+              Number: <input type="text" name="number" /><br/>
+              Rarity: <input type="text" name="rarity" /><br/>
+              Opensea: <input type="link" name="opensea" /><br/>
+              <input type="submit" value="Showcase NFT"/>
+          </form>
+        </div>
+
     </body>
 </html>
